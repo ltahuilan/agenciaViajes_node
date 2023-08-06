@@ -1,0 +1,32 @@
+extends ./layouts/index
+
+block contenido
+    main.container.my-5
+        h1.text-center.mb-3 #{pagina}
+        //- p #{JSON.stringify(testimoniales)}
+
+        blockquote.text-center Lee sobre nuestros clientes y sus experiencias
+        include ./layouts/bloque_testimoniales.pug
+
+        .row
+            h2.text-center.mb-5.d-block.w-100 Agrega un testimonial
+            .container
+                .row.justify-content-center
+                    .col-md-7
+                        if(errores)
+                            each error in errores 
+                                .alert.alert-danger.text-center #{error}
+            .container
+                .row.justify-content-center
+                    .col-md-6
+                        form(action="" method="POST") 
+                            .form-group
+                                label(for="nombre") Nombre
+                                input#nombre.form-control(type="text" placeholder="Escribe tu nombre" name="nombre" value=nombre)
+                            .form-group
+                                label(for="email") Correo
+                                input#email.form-control(type="email" placeholder="Escribe tu email" name="email" value=email)
+                            .form-group
+                                label(for="mensaje") Mensaje
+                                textarea#mensaje.form-control(placeholder="Escribe tu mensaje" name="mensaje" rows="3") #{mensaje}
+                            input.btn.btn-success.btn-block(type="submit")

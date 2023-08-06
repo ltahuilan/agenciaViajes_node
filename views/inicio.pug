@@ -1,0 +1,38 @@
+extends ./layouts/index
+
+block slider
+    .slider
+        h1 Río de Janeiro
+        em Aventura
+
+block contenido
+    main.container.mt-5
+        h2.text-center.mb-5 Sobre nosotros
+        .row.mb-5
+            .col-md-6
+                p Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere quaerat, dolorem ex delectus atque nesciunt, assumenda, tempora ab voluptates alias rem nihil reiciendis quidem aliquam unde corrupti saepe ducimus voluptate cumque adipisci at. Sunt tempora itaque aliquam architecto totam dolorem porro deleniti, perspiciatis eaque rem fugiat recusandae sit nesciunt eos ipsa minima voluptatem dolore quasi praesentium! Magni sit nemo molestias?
+
+                p Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium quidem magnam nihil consequuntur neque voluptatum fuga eos ipsa aliquam voluptate, a ea non, labore velit at cupiditate id veniam cum ratione laborum aut, dolores itaque! Sit cum sed iure, corporis ipsa error voluptate est unde!
+            .col-md-6
+                img(src="/img/nosotros.jpg", alt="")
+
+        .container
+            h2.text-center.mb-5 Viajes
+            .row.proximos-viajes
+                include ./layouts/bloque_viajes.pug
+
+    .descuento 
+        .container
+            .row 
+                .col-md-6 
+                    .contenido 
+                        h3 5% de descuento 
+                        p.titulo Viaje a Canadá
+                        p.fecha 20 al 28 de agosto 2023
+                        p.precio USD $12000
+    .container 
+        h2.text-center.mt-5 Testimoniales
+        include ./layouts/bloque_testimoniales.pug
+        
+
+        

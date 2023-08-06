@@ -1,0 +1,36 @@
+extends layouts/index.pug
+
+block contenido
+    main.container.my-5
+        h1.text-center.mb-5 #{viaje.titulo}
+        .row 
+            .col-md-5
+                img.img-fluid(src=`/img/destinos_${viaje.imagen}_ln.jpg`, alt="imagen_ln")  
+            .col-md-7
+                p 
+                    svg.icon.icon-tabler.icon-tabler-calendar-check(xmlns='http://www.w3.org/2000/svg' width='44' height='44' viewbox='0 0 24 24' stroke-width='1.5' stroke='#DC135F' fill='none' stroke-linecap='round' stroke-linejoin='round')
+                        path(stroke='none' d='M0 0h24v24H0z' fill='none')
+                        path(d='M11.5 21h-5.5a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v6')
+                        path(d='M16 3v4')
+                        path(d='M8 3v4')
+                        path(d='M4 11h16')
+                        path(d='M15 19l2 2l4 -4')                        
+                    span.ml-2 #{viaje.fecha_ida} - #{viaje.fecha_vuelta}
+                p
+                    svg.icon.icon-tabler.icon-tabler-users-group(xmlns='http://www.w3.org/2000/svg' width='44' height='44' viewbox='0 0 24 24' stroke-width='1.5' stroke='#DC135F' fill='none' stroke-linecap='round' stroke-linejoin='round')
+                        path(stroke='none' d='M0 0h24v24H0z' fill='none')
+                        path(d='M10 13a2 2 0 1 0 4 0a2 2 0 0 0 -4 0')
+                        path(d='M8 21v-1a2 2 0 0 1 2 -2h4a2 2 0 0 1 2 2v1')
+                        path(d='M15 5a2 2 0 1 0 4 0a2 2 0 0 0 -4 0')
+                        path(d='M17 10h2a2 2 0 0 1 2 2v1')
+                        path(d='M5 5a2 2 0 1 0 4 0a2 2 0 0 0 -4 0')
+                        path(d='M3 13v-1a2 2 0 0 1 2 -2h2')
+                    span.ml-2 #{viaje.disponibles} Disponibles
+                p 
+                    svg.icon.icon-tabler.icon-tabler-tag(xmlns='http://www.w3.org/2000/svg' width='44' height='44' viewbox='0 0 24 24' stroke-width='1.5' stroke='#DC135F' fill='none' stroke-linecap='round' stroke-linejoin='round')
+                        path(stroke='none' d='M0 0h24v24H0z' fill='none')
+                        circle(cx='8.5' cy='8.5' r='1' fill='currentColor')
+                        path(d='M4 7v3.859c0 .537 .213 1.052 .593 1.432l8.116 8.116a2.025 2.025 0 0 0 2.864 0l4.834 -4.834a2.025 2.025 0 0 0 0 -2.864l-8.117 -8.116a2.025 2.025 0 0 0 -1.431 -.593h-3.859a3 3 0 0 0 -3 3z')
+                    span.ml-2 USD $#{viaje.precio}
+
+                p   #{viaje.descripcion.substr(0, 820)}
