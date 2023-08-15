@@ -8,7 +8,7 @@ import db from './config/db.js';
 const app = express();
 
 //definir puerto
-const port = process.env.PORT || 4000;
+const port = process.env.PORT || 3000;
 
 //habilitar el uso del template engine PUG
 app.set('view engine', 'pug');
@@ -19,7 +19,7 @@ app.use(express.static('public'));
 //conectar con la BD
 db.authenticate()
     .then( () => {
-        console.log('Conexión a la DB correcta');
+        console.log('Connection to DB suceess...');
     })
     .catch( error => {
         console.log(error);
@@ -40,5 +40,5 @@ app.use(express.urlencoded({ extended: true}));
 app.use('/', router);
 
 app.listen(port, () => {
-    console.log(`Ejecuntado express en el puerto ${port}`);
+    console.log(`Executing express on port ${port}`);
 });

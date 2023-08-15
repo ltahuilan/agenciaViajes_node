@@ -1,0 +1,29 @@
+extends ./layouts/admin_layout
+
+block contenido
+    main.container.my-5
+        h1.text-center.mb-5 #{pagina}
+
+        table.table
+            thead
+                tr
+                th(scope='col') #
+                th(scope='col') Titulo
+                th(scope='col') Fecha ida
+                th(scope='col') Fecha vuelta
+                th(scope='col') Acciones
+                each viaje in viajes
+                    tbody
+                        tr
+                        th(scope='row') #{viaje.id}
+                        td #{viaje.titulo}
+                        td #{viaje.fecha_ida}
+                        td #{viaje.fecha_vuelta}
+                        td
+                            .d-flex.flex-row.flex-md-column
+                                button.btn.btn-primary Editar
+                                input.btn.btn-danger(value="Eliminar")
+            
+
+
+        

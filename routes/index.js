@@ -6,9 +6,8 @@ import {
     paginaTestimoniales,
     paginaDetalleViaje
 } from '../controllers/paginasController.js';
-import {
-    guardarTestimoniales
-} from '../controllers/testimonialController.js'
+import {guardarTestimoniales} from '../controllers/testimonialController.js';
+import {administrarViajes, crearViaje} from '../controllers/viajesController.js';
 
 const router = express.Router();
 
@@ -22,5 +21,8 @@ router.get('/viaje/:slug', paginaDetalleViaje);
 
 router.get('/testimoniales', paginaTestimoniales);
 router.post('/testimoniales', guardarTestimoniales);
+
+router.get('/admin', administrarViajes);
+router.get('/admin/crear', crearViaje);
 
 export default router;

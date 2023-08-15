@@ -1,0 +1,25 @@
+extends ./layouts/admin_layout
+
+block contenido
+    .row.justify-content-center
+        .col-md-6 
+            form(action="" method="POST")
+                .form-group
+                    label(for="titulo") Titulo
+                    input#titulo(type="text" placeholder="Escribe el titulo del viaje" name="titulo" class="form-control")
+                .form-group
+                    label(for="precio") Precio
+                    input#precio(type="text" placeholder="Escribe el precio" name="precio" class="form-control")
+                .form-group
+                    label(for="fecha_ida") Fecha de ida
+                    input#fecha_ida(type="text" placeholder="Escribe la fecha de ida" name="fecha_ida" class="form-control")
+                .form-group
+                    label(for="fecha_vuelta") Fecha vuelta
+                    input#fecha_vuelta(type="text" placeholder="Escribe tu nombre" name="fecha_vuelta" class="form-control")
+                .form-group
+                    label(for="imagen") Imagen
+                    input#imagen(type="text" placeholder="Escribe el nombre de la imagen sin espacios Ej.: roma" name="imagen" class="form-control")
+                .form-group
+                    label(for="descripcion") Descripcion
+                    textarea#descripcion(placeholder="Escribe la descripción del viaje" name="descripcion" rows="5" class="form-control")
+                        input.btn.btn-success.btn-block(type="submit")
